@@ -1,0 +1,92 @@
+/* styles.css */
+html { scroll-behavior: smooth; } 
+
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
+.btn-card { transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease; }
+.btn-card:active { transform: scale(0.98); }
+@media (hover: hover) {
+    .btn-card:hover { transform: translateY(-2px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); border-color: #0e7490; }
+}
+
+.view-section { display: none; }
+.view-section.active { display: block; animation: fadeInView 0.3s ease; }
+@keyframes fadeInView { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+.tab-content { display: none; animation: fadeIn 0.3s ease-in-out; }
+.tab-content.active { display: block; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+.tab-btn.active { border-bottom-width: 2px; background-color: rgba(0,0,0,0.03); }
+.dark .tab-btn.active { background-color: rgba(255,255,255,0.05); }
+
+/* Cores de especialidades */
+.tab-active-dentistica { color: #0e7490; border-color: #0e7490; background-color: #ecfeff !important; }
+.dark .tab-active-dentistica { background-color: #0e749030 !important; color: #22d3ee; border-color: #22d3ee; }
+
+.tab-active-periodontia { color: #be123c; border-color: #be123c; background-color: #fff1f2 !important; }
+.dark .tab-active-periodontia { background-color: #be123c30 !important; color: #fb7185; border-color: #fb7185; }
+
+.tab-active-endodontia { color: #4338ca; border-color: #4338ca; background-color: #e0e7ff !important; }
+.dark .tab-active-endodontia { background-color: #4338ca30 !important; color: #818cf8; border-color: #818cf8; }
+
+.tab-active-cirurgia { color: #059669; border-color: #059669; background-color: #ecfdf5 !important; }
+.dark .tab-active-cirurgia { background-color: #05966930 !important; color: #34d399; border-color: #34d399; }
+
+.tab-active-prescricoes { color: #d97706; border-color: #d97706; background-color: #fffbeb !important; }
+.dark .tab-active-prescricoes { background-color: #d9770630 !important; color: #fbbf24; border-color: #fbbf24; }
+
+.spinner { border: 3px solid rgba(0,0,0,0.1); border-left-color: #0e7490; border-radius: 50%; width: 24px; height: 24px; animation: spin 1s linear infinite; }
+.dark .spinner { border-color: rgba(255,255,255,0.1); border-left-color: #22d3ee; }
+
+@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+.filter-btn {
+    white-space: nowrap; padding: 0.5rem 1rem; border-radius: 9999px;
+    font-size: 0.875rem; font-weight: 500; border: 1px solid #e5e7eb;
+    background-color: white; color: #374151; transition: all 0.2s;
+}
+.dark .filter-btn { background-color: #1f2937; border-color: #374151; color: #d1d5db; }
+.filter-btn.active { background-color: #0e7490; color: white; border-color: #0e7490; }
+.dark .filter-btn.active { background-color: #0891b2; border-color: #0891b2; }
+
+/* Editor e Texto Rico */
+.editor-paper {
+    background: white; min-height: 29.7cm; padding: 2.5cm 2cm; margin: 0 auto;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); outline: none; color: #333;
+    line-height: 1.6; font-size: 11pt; font-family: 'Inter', sans-serif !important; 
+}
+.dark .editor-paper { background: #1f2937; color: #e5e7eb; }
+
+.editor-paper * { font-family: 'Inter', sans-serif !important; color: #374151 !important; background-color: transparent !important; font-size: inherit !important; }
+.dark .editor-paper * { color: #d1d5db !important; }
+
+.editor-paper b, .editor-paper strong { font-weight: 700 !important; }
+.editor-paper i, .editor-paper em { font-style: italic !important; }
+
+.editor-paper h1, .rich-text h1 { font-size: 1.8em !important; font-weight: 700 !important; margin-top: 1em; color: #111827 !important; }
+.dark .editor-paper h1, .dark .rich-text h1 { color: #f9fafb !important; }
+
+.editor-paper h2, .rich-text h2 { font-size: 1.4em !important; font-weight: 700 !important; margin-top: 1em; color: #1f2937 !important; }
+.dark .editor-paper h2, .dark .rich-text h2 { color: #f3f4f6 !important; }
+
+.editor-paper h3, .rich-text h3 { font-size: 1.1em !important; font-weight: 700 !important; margin-top: 1em; color: #374151 !important; }
+.dark .editor-paper h3, .dark .rich-text h3 { color: #e5e7eb !important; }
+
+@media (max-width: 640px) { .editor-paper { padding: 1.5rem; min-height: 60vh; } }
+
+.editor-toolbar { position: sticky; top: 0; z-index: 40; background: #f3f4f6; border-bottom: 1px solid #e5e7eb; padding: 0.5rem; display: flex; gap: 0.25rem; flex-wrap: wrap; align-items: center; }
+.dark .editor-toolbar { background: #111827; border-color: #374151; }
+
+.toolbar-btn { padding: 0.4rem; border-radius: 0.25rem; color: #4b5563; transition: background 0.2s; display: flex; align-items: center; justify-content: center; min-width: 32px; min-height: 32px; }
+.dark .toolbar-btn { color: #9ca3af; }
+.toolbar-btn:hover { background-color: #e5e7eb; color: #111827; }
+.dark .toolbar-btn:hover { background-color: #374151; color: #f9fafb; }
+
+.rich-text ul, .editor-paper ul { list-style-type: disc; padding-left: 1.2rem; margin-bottom: 1em; }
+.rich-text ol, .editor-paper ol { list-style-type: decimal; padding-left: 1.2rem; margin-bottom: 1em; }
+.rich-text ul ul, .editor-paper ul ul { list-style-type: circle; padding-left: 1rem; margin-bottom: 0.5em; margin-top: 0.25em; }
+.rich-text ol ol, .editor-paper ol ol { list-style-type: lower-alpha; padding-left: 1rem; }
+.rich-text li, .editor-paper li { margin-bottom: 0.25em; }
+[contenteditable]:empty:before { content: attr(placeholder); color: #9ca3af; cursor: text; display: block; }
